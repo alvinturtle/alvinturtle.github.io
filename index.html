@@ -13819,14 +13819,14 @@ Requirement already satisfied: MarkupSafe&gt;=0.23 in /opt/conda/lib/python3.7/s
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, the dataframes are concatenated and is where the bulk of the tidying is done. Numbers are converted into a standard format, the dates are converted to a datetimes. It is worth noting that it is quite likely multiple sources will have duplicate events. In order to prevent double counting, it is necessary to remove duplicate entries. Detection of duplicates is done by referencing the datetime, city, state, and total fatalities. If all three match, then it is counted as a duplicate and removed.</p>
+<p>Here, the dataframes are concatenated and is where the bulk of the tidying is done. Numbers are converted into a standard format, the dates are converted to a datetimes. It is worth noting that it is quite likely multiple sources will have duplicate events. In order to prevent double counting, it is necessary to remove duplicate entries. Detection of duplicates is done by referencing the datetime, city, and state. If all three match, then it is counted as a duplicate and removed.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ag</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">st</span><span class="p">,</span><span class="n">et</span><span class="p">,</span><span class="n">mj</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -13851,7 +13851,7 @@ Requirement already satisfied: MarkupSafe&gt;=0.23 in /opt/conda/lib/python3.7/s
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
